@@ -1,0 +1,5 @@
+I am using a StringBuilder because it's memory friendly.
+I want the user to select their province from a menu.
+I want the user to fill in their personal details (name, surname, id/ passport).
+The number late will be generated randomly using 3 alphabet charactors and numbers.
+The user will then be provided with their details and Plate number.
