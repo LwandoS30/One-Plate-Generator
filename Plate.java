@@ -1,6 +1,8 @@
 package plategenerator;
 
 import java.util.Scanner;
+import plategenerator.car.Car;
+import java.util.Random;
 
 public class Plate{
     //class fields declaration
@@ -12,19 +14,18 @@ public class Plate{
     private String plateNumber;
 
     public static void main(String args[]){
-        //Class plate object
+        //Object creation
         Plate userDetails = new Plate();
-         //Scanner object
         Scanner input = new Scanner(System.in);
+        Car carDetails = new Car();
+        Random rand = new Random();
 
         //Array declaration and assignment
         //Charactor array
-        char[] alphaChar = {'a', 'b', 'c', 'd', 'e','f', 'g', 'h', 'i', 'j','k',
-         'l', 'm', 'n', 'o','p', 'q', 'r', 's', 'u', 'v', 'w', 'x', 'y', 'z'};
-
+        char alphaChar = 'a', tempChar;
+        int randNum;
         //String array
-        String[] province = {"Eastern Cape", "Gauteng", "Free State", "Kwa-Zulu Natal", 
-        "Limpopo", "Mpumalanga", "Northen Cape", "North West", "Western Cape"};
+        String[] province = {"EC", "GP", "FC", "KWZ", "LP", "MP", "NC", "NW", "WC"};
 
         //String array
         String[] identityOption = {"National Id", "Passport"};
@@ -33,6 +34,7 @@ public class Plate{
         System.out.println("****************************Welcome to One Plate Registration*****************************");
         System.out.println("******************************************************************************************");
         System.out.println();
+
         //Prompt for user data
         System.out.println("Please enter your first name: ");
         userDetails.fName = input.nextLine();
@@ -77,19 +79,39 @@ public class Plate{
             }
         }
 
+        System.out.println("Please enter your car color: ");
+        carDetails.setColor(input.next());
 
-        // for(int p = 0; p < province.length; p++){
-        //     System.out.println(p+". "+province[p]);
-        // }
-        // System.out.println("Please enter a number of your province");
-        // int provinceNumber;
+        System.out.println("Please enter your car make: ");
+        carDetails.setMake(input.next());
 
-        // if(province[0]){
+        System.out.println("Please enter your car model: ");
+        carDetails.setModel(input.next());
 
-        // }
-        // for(int i = 0; i <= 25; i++){
-        //     System.out.println(alpha);
-        //     alpha++;
-        // }
+        System.out.println("Please enter your car year: ");
+        carDetails.setYear(input.nextInt());
+      
+        //Display provinces so people will enter the province abbriviation
+        System.out.println();
+        //Province string to store the selected province code by the user
+        String provinceCode;
+        
+        System.out.println("Please enter the abbriviation of your province from the below list");
+        for(int p = 0; p < province.length; p++){
+            System.out.println(province[p]);
+        }
+        System.out.println("Enter province  code: ");
+        provinceCode = input.next();
+
+        //Declare a string to store the generated values
+        // String 
+        //Generating the first two random charactors
+        randNum = rand.nextInt(10);
+        
+        for(int r = 0; r < 3; r++){
+            System.out.println(r);
+        }
+        input.close();
     }
+
 }
